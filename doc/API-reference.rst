@@ -20,6 +20,17 @@ Basic API
 .. autofunction:: incr_dbuilders
 .. autofunction:: incr_dbuilder
 
+Term-wise linear model selection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: bic_term_selection
+
+.. autoclass:: LinearTermSelectionResult
+   :members:
+
+.. autoclass:: TermCandidateFit
+   :members:
+
 .. autoexception:: PatsyError
    :members:
 

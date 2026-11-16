@@ -8,13 +8,29 @@ All Patsy releases are archived at Zenodo:
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.592075.svg
    :target: https://doi.org/10.5281/zenodo.592075
 
+v1.0.3+dev
+----------
+
+* Added :func:`bic_term_selection`, a term-wise linear model selection
+  routine driven by BIC. The formula is evaluated once and every
+  candidate reuses the same valid rows and column coding; terms are the
+  atomic units of selection (categorical terms enter as a whole),
+  hierarchy/marginality is enforced (interactions missing their
+  lower-order terms are unselectable), the intercept is fixed when
+  present, and only full-rank candidates with residual degrees of
+  freedom and positive RSS are compared. The returned
+  :class:`LinearTermSelectionResult` carries the selected terms,
+  coefficients, BIC, per-candidate diagnostics, and a
+  :meth:`~LinearTermSelectionResult.predict` method that reuses the
+  training :class:`DesignInfo` (category codings, stateful-transform
+  state and spline knots) without relearning anything on new data.
+
 v1.0.3
 ------
 
 * Added official support for Python 3.14.
 * Fixed constraint tokenizer compatibility with Python 3.15 pre-releases.
 * Updates to CI tooling and doc building.
-
 v1.0.2
 ------
 
